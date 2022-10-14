@@ -4,13 +4,13 @@ def spec_remove_elem_by_value(param):
                {"key": "None"}]
     
     length = len(mas_res)
+    # offset for tracking the deleted elements of
     offset = 0
-    c = 0
 
     for i in range(length):
         if param == mas_res[i-offset] or param in str(mas_res[i-offset]):
-            c += 1
-            if c == 2:
+            # checks for second element
+            if offset == 1:
                 continue
             mas_res.pop(i-offset)
             offset += 1
@@ -18,4 +18,4 @@ def spec_remove_elem_by_value(param):
     print(mas_res)
 
 if __name__ == "__main__":
-    spec_remove_elem_by_value('555')
+    spec_remove_elem_by_value('None')
